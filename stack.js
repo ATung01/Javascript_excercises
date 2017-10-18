@@ -19,11 +19,15 @@ let Stack = function() {
     return resultOfPop
   }
 
+  this.size = () => {
+    return this.count
+  }
+
   this.peek = () => {
     return this.storage[this.count-1]
   }
 
 
-  
+
 
 }
