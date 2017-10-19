@@ -26,8 +26,5 @@ let Stack = function() {
   this.peek = () => {
     return this.storage[this.count-1]
   }
-
-
-
-
+  
 }
