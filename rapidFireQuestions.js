@@ -29,3 +29,10 @@ function question3() {
   console.log(typeof []);
   console.log(typeof undefined);
 }
+
+function question4() {
+   console.log(1);
+   setTimeout(function() { console.log(2); }, 1000);
+   setTimeout(function() { console.log(3); }, 0);
+   console.log(4);
+}
