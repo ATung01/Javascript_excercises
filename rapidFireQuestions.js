@@ -22,3 +22,10 @@ function question2() {
      nodes[i].addEventListener('click', handlerWrapper(i));
   }
 }
+
+function question3() {
+  console.log(typeof null);
+  console.log(typeof {});
+  console.log(typeof []);
+  console.log(typeof undefined);
+}
