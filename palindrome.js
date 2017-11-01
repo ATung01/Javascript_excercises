@@ -1,22 +1,25 @@
-let letters = []
 
-let word = "racecar"
+// let word = "racecar"
 
-let rword = ""
 
-for (var i = 0; i < word.length; i++) {
-  letters.push(word[i])
-}
+function slowerPalindrome(word) {
+  let letters = []
+  let rword = ""
 
-for (var i = 0; i < word.length; i++) {
-  rword += letters.pop();
-}
+  for (var i = 0; i < word.length; i++) {
+    letters.push(word[i])
+  }
 
-if (rword === word) {
-  console.log(word + " is a palindrome.")
-}
-else {
-  console.log(word + " is not a palindrome.")
+  for (var i = 0; i < word.length; i++) {
+    rword += letters.pop();
+  }
+
+  if (rword === word) {
+    console.log(word + " is a palindrome.")
+  }
+  else {
+    console.log(word + " is not a palindrome.")
+  }
 }
 
 function fasterPalindrome(word) {
@@ -33,7 +36,7 @@ function fasterPalindrome(word) {
 
   }
   console.log(word + " is a palindrome.")
-  return true; // Both parts are strictly equal, it returns true => The string is a palindrome
+  return true;
   }
 
 }
