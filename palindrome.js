@@ -21,6 +21,10 @@ else {
 
 function fasterPalindrome(word) {
 
+  var re = /[^A-Za-z0-9]/g; // or var re = /[\W_]/g;
+  word = word.toLowerCase().replace(re, '');
+
+
   for (var i = 0; i < word.length/2; i++) {
     if (str[i] !== str[word.length - 1 - i]) {
       console.log(word + " is not a palindrome.")
