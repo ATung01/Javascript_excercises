@@ -23,7 +23,8 @@ function fasterPalindrome(word) {
 
   for (var i = 0; i < word.length/2; i++) {
     if (str[i] !== str[word.length - 1 - i]) {
-        return false;
+      console.log(word + " is not a palindrome.")
+      return false;
     }
 
   }
