@@ -1,4 +1,4 @@
-var factor = function(number) {
+function factor(number) {
   var result = 1;
   var count;
   for (count = number; count > 1; count--) {
@@ -6,5 +6,16 @@ var factor = function(number) {
   }
   return result;
 };
-console.log(factor(6));
-// 720
+console.log(factor(7));
+
+
+
+var factorial = function(number) {
+  if (number <= 1) { 
+    return 1;
+  }
+  else {
+    return (number * factorial(number - 1));
+  }
+};
+console.log(factorial(7));
