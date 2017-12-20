@@ -1,10 +1,10 @@
 // Question 1
 
 function stringCheck(inputString, correctString) {
-  var numErrors = 0;
-  var inputIdx = 0;
+  let numErrors = 0;
+  let inputIdx = 0;
 
-  for (var i = 0; i < inputString.length; i++) {
+  for (let i = 0; i < inputString.length; i++) {
     if (inputIdx >= correctString.length) {
       inputIdx = 0;
     }
@@ -19,22 +19,21 @@ function stringCheck(inputString, correctString) {
 // Question 2
 
 function letterCounter(inputString) {
-  var counts = {};
+  let counts = {};
 
-  for (var i = 0; i < inputString.length; i++) {
+  for (let i = 0; i < inputString.length; i++) {
     counts[inputString[i]] = 1 + (counts[inputString[i]] || 0 );
   }
   return counts;
 }
 
 function palindromeCheck(inputString) {
-  var numOdd = 0;
-  var numLetters = letterCounter(inputString);
+  let numOdd = 0;
+  let numLetters = letterCounter(inputString);
 
   for( x in numLetters ) {
     numOdd += (numLetters[x] % 2);
   }
-
   if (numOdd === 0) {
     return true;
   }
@@ -44,7 +43,6 @@ function palindromeCheck(inputString) {
   else {
     return false;
   }
-
 }
 
 
@@ -53,9 +51,9 @@ function palindromeCheck(inputString) {
 
 
 function jennyTree(desiredHeight) {
-  var currentHeight = 1;
-  var numYears = 0;
-  var wontShrink = false;
+  let currentHeight = 1;
+  let numYears = 0;
+  let wontShrink = false;
   while(currentHeight < desiredHeight && wontShrink === false) {
     console.log(currentHeight)
     currentHeight = growRules(currentHeight);
@@ -81,8 +79,8 @@ function growRules(currentHeight){
 }
 
 function jennyPalindrome(num) {
-  var numString = num.toString();
-    for (var i = 0; i < numString.length/2; i++) {
+  let numString = num.toString();
+    for (let i = 0; i < numString.length/2; i++) {
     if (numString[i] !== numString[numString.length - 1 - i]) {
       return false;
     }
