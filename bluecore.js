@@ -65,7 +65,7 @@ function jennyTree(desiredHeight) {
   while(currentHeight < desiredHeight && wontShrink === false) {
     console.log(currentHeight)
     currentHeight = growRules(currentHeight);
-    if (currentHeight >= desiredHeight && jennyPalindrome(currentHeight) === false ) {
+    if (currentHeight >= desiredHeight && jennyPalindrome(Math.floor(currentHeight)) === false ) {
       wontShrink = true;
     }
     numYears++;
