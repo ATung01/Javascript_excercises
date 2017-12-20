@@ -1,6 +1,4 @@
-// var test = "BLUE"
-// var test1 = "XLIEYLUE"
-// var test2 = "BLUEBLUE"
+// Question 1
 
 function stringCheck(inputString, correctString) {
   var numErrors = 0;
@@ -18,12 +16,16 @@ function stringCheck(inputString, correctString) {
   return numErrors;
 }
 
+// Question 2
 
-///////////////////////////////////////////////////////////
+function letterCounter(inputString) {
+  var counts = {};
 
-// var test1 = "aaaabbbbcdddd"
-// var test2 = "abds"
-// var test3 = "bbbbcccc"
+  for (var i = 0; i < inputString.length; i++) {
+    counts[inputString[i]] = 1 + (counts[inputString[i]] || 0 );
+  }
+  return counts;
+}
 
 function palindromeCheck(inputString) {
   var numOdd = 0;
@@ -45,17 +47,9 @@ function palindromeCheck(inputString) {
 
 }
 
-function letterCounter(inputString) {
-  var counts = {};
-
-  for (var i = 0; i < inputString.length; i++) {
-    counts[inputString[i]] = 1 + (counts[inputString[i]] || 0 );
-  }
-  return counts;
-}
 
 
-////////////////////////////////////////////////////////////////////
+// Question 3
 
 
 function jennyTree(desiredHeight) {
