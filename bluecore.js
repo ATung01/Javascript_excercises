@@ -24,6 +24,7 @@ function letterCounter(inputString) {
   for (let i = 0; i < inputString.length; i++) {
     counts[inputString[i]] = 1 + (counts[inputString[i]] || 0 );
   }
+  // adding everything into an object with each letter stored as a key
   return counts;
 }
 
@@ -34,15 +35,13 @@ function palindromeCheck(inputString) {
   for( x in numLetters ) {
     numOdd += (numLetters[x] % 2);
   }
-  if (numOdd === 0) {
-    return true;
-  }
-  else if (numOdd === 1 && inputString.length % 2 === 1) {
+  if (numOdd === 0 || numOdd === 1) {
     return true;
   }
   else {
     return false;
   }
+  // I'm assuming the only way a palindrome works as an anagram is that there can only be a max of 1 odd number of characters
 }
 
 
