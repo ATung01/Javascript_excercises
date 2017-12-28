@@ -44,3 +44,31 @@ expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
 
 */
+
+var A = [-1,3,-4,5,1,-6,2,1];
+
+function solution(A) {
+
+    let rightSum = A.reduce((acc, val) => acc + val)
+    let leftSum = 0
+    let currentRight = []
+    let currentLeft = []
+    let answers = []
+
+    for (let i = 0; i < A.length; i++) {
+
+        rightSum -= A[i];
+
+        currentRight.push(rightSum);
+        currentLeft.push(leftSum);
+
+        if (rightSum === leftSum) answers.push(i);
+
+        leftSum += A[i];
+
+    }
+
+    return answers;
+}
+
+solution(A);
