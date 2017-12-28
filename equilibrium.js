@@ -45,17 +45,18 @@ expected worst-case space complexity is O(N), beyond input storage (not counting
 
 */
 
-var A = [-1,3,-4,5,1,-6,2,1];
+var A = [-10,34,-3,1,-6,2,1,9,-10];
 
 function solution(A) {
 
     let rightSum = A.reduce((acc, val) => acc + val)
+    // rightSum is initialized with the sum of the entire array
     let leftSum = 0
     let currentRight = []
     let currentLeft = []
     let answers = []
 
-    for (let i = 0; i < A.length; i++) {
+    for (let i = 1; i < A.length; i++) {
 
         rightSum -= A[i];
 
