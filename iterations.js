@@ -17,7 +17,8 @@ function solution(N) {
     if (binaryArr[i] === "1"  && currentSequence === "closed" && binaryArr[i+1] === "0") {
       currentSequence = "open"
     }
-    else if (binaryArr[i] === "0" && currentSequence === "open") {
+    else if (binaryArr[i] === "0") {
+      currentSequence = "open"
       numZeroes++
     }
     else if (binaryArr[i] === "1" && currentSequence === "open") {
