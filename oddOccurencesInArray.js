@@ -34,3 +34,18 @@ expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(1), beyond input storage (not counting the storage required for input arguments).
 
 */
+
+function solution(A) {
+  let counts = {};
+
+  for (let i = 0; i < A.length; i++) {
+    counts[A[i]] = 1 + (counts[A[i]] || 0 );
+  }
+
+  for(let x in counts) {
+    if(counts[x] % 2 !== 0) {
+        return parseInt(x)
+    }
+  }
+
+}
