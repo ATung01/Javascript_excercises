@@ -31,8 +31,8 @@ expected worst-case space complexity is O(1).
 */
 
 function solution(X, Y, D) {
-    let answer = Math.floor(Math.abs(X - Y)/D) + 1
-
+    let distance = Y - X
+    let answer = Math.ceil(distance/D)
     return answer
-
+    
 }
