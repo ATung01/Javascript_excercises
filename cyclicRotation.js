@@ -39,6 +39,7 @@ In your solution, focus on correctness. The performance of your solution will no
 */
 
 function solution(A, K) {
+  K = K % A.length
   let startPos = A.length - K
   let segment = A.splice(startPos)
 
