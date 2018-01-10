@@ -29,3 +29,10 @@ expected worst-case time complexity is O(1);
 expected worst-case space complexity is O(1).
 
 */
+
+function solution(X, Y, D) {
+    let answer = Math.floor(Math.abs(X - Y)/D) + 1
+
+    return answer
+
+}
