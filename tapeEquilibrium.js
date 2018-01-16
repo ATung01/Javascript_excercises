@@ -49,17 +49,15 @@ expected worst-case space complexity is O(N), beyond input storage (not counting
 
 function solution(A) {
     let minimum = 100000
+    let leftSum = 0
+    let rightSum = A.reduce(function(a,b) {
+        return a + b
+    })
 
     for (let p = 1; p < A.length; p++) {
-        let leftPart = A.slice(0, p)
-        let rightPart = A.slice(p)
+        leftSum += A[p-1]
+        rightSum -= A[p-1]
 
-        let leftSum = leftPart.reduce(function(a,b) {
-            return a + b
-        })
-        let rightSum = rightPart.reduce(function(a,b) {
-            return a + b
-        })
         let difference = Math.abs(leftSum - rightSum)
         if (difference < minimum) {
             minimum = difference
