@@ -50,16 +50,19 @@ expected worst-case space complexity is O(X), beyond input storage (not counting
 
 function solution(X, A) {
     let existingNum = {}
+    let counter = 0
     for (let i = 1; i <= X; i++) {
         existingNum[i] = 0
+        counter++
     }
     // this makes a new object from 1 to X as the keys and 0 as the value
 
     for (let j = 0; j < A.length; j++) {
         if (existingNum[A[j]] === 0) {
             delete existingNum[A[j]]
+            counter--
         }
-        if (Object.keys(existingNum).length === 0) {
+        if (counter === 0) {
             return j;
         }
     }
