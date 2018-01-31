@@ -59,3 +59,34 @@ Complexity:
 expected worst-case time complexity is O(N+M);
 expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
 */
+
+function solution(N, A) {
+    let result = []
+    for (let i = 0; i < Math.max(...A) - 1; i++) {
+        result[i] = 0
+    }
+
+    for (let j = 0; j < A.length; j++) {
+
+        if (A[j] !== N+1){
+            result = increaseCounter(result, A[j])
+        }
+        else {
+            result = maxCounter(result)
+        }
+    }
+    return result
+}
+
+function increaseCounter(arr, idx) {
+    arr[idx-1] += 1
+    return arr
+}
+
+function maxCounter(arr) {
+    let maxValue = Math.max(...arr)
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = maxValue
+    }
+    return arr
+}
