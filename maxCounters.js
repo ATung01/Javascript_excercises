@@ -62,7 +62,7 @@ expected worst-case space complexity is O(N), beyond input storage (not counting
 
 function solution(N, A) {
     let result = []
-    for (let i = 0; i < Math.max(...A) - 1; i++) {
+    for (let i = 0; i <= N - 1; i++) {
         result[i] = 0
     }
 
