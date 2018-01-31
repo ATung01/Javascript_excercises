@@ -62,6 +62,7 @@ expected worst-case space complexity is O(N), beyond input storage (not counting
 
 function solution(N, A) {
     let result = []
+    let currentMax = 0
     for (let i = 0; i <= N - 1; i++) {
         result[i] = 0
     }
@@ -70,9 +71,12 @@ function solution(N, A) {
 
         if (A[j] !== N+1){
             result = increaseCounter(result, A[j])
+            if (result[A[j]-1] > currentMax) {
+                currentMax = result[A[j]-1]
+            }
         }
         else {
-            result = maxCounter(result)
+            result = maxCounter(result, currentMax)
         }
     }
     return result
@@ -83,10 +87,9 @@ function increaseCounter(arr, idx) {
     return arr
 }
 
-function maxCounter(arr) {
-    let maxValue = Math.max(...arr)
+function maxCounter(arr, currentMax) {
     for (let i = 0; i < arr.length; i++) {
-        arr[i] = maxValue
+        arr[i] = currentMax
     }
     return arr
 }
