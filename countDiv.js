@@ -23,3 +23,13 @@ expected worst-case time complexity is O(1);
 expected worst-case space complexity is O(1).
 
 */
+
+function solution(A, B, K) {
+    let result = 0
+    for(let i = A; i <= B; i++) {
+        if (i % K === 0) {
+            result ++
+        }
+    }
+    return result
+}
