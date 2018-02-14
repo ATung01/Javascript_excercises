@@ -44,3 +44,11 @@ expected worst-case space complexity is O(1), beyond input storage (not counting
 
 
 */
+
+function solution(A) {
+
+   A.sort(function(a, b) {
+       return a - b
+   })
+   return Math.max(A[0] * A[1] * A.slice(-1)[0], A.slice(-1)[0] * A.slice(-2)[0] * A.slice(-3)[0])
+}
