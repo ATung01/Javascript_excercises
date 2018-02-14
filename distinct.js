@@ -22,3 +22,14 @@ Complexity:
 expected worst-case time complexity is O(N*log(N));
 expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
 */
+
+function solution(A) {
+
+    let count = {}
+
+    for (let i = 0; i < A.length; i++) {
+        count[A[i]] = 1 + (count[A[i]] || 0)
+    }
+
+    return Object.keys(count).length
+}
