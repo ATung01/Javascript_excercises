@@ -36,3 +36,16 @@ expected worst-case time complexity is O(N*log(N));
 expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
 
 */
+
+function solution(A) {
+    let sortedA = A.sort(function(a, b) {
+        return a - b;
+    })
+
+    for(let i = 0; i < sortedA.length-2; i++) {
+        if (sortedA[i] + sortedA[i+1] > sortedA[i+2]) {
+            return 1
+        }
+    }
+    return 0
+}
