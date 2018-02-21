@@ -24,3 +24,42 @@ expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(N) (not counting the storage required for input arguments).
 
 */
+
+function solution(S) {
+    S = S.split("")
+    let openNestedPar = []
+    if (S.length === 0) {
+        return 1
+    }
+    for (let i = 1; i < S.length; i++) {
+        if (S[i] === ")") {
+          if (S[i-1] === "(") {
+              S.splice(i-1, 2)
+              i--
+          }
+          else {
+              return 0
+          }
+        }
+        if (S[i] === "}") {
+          if (S[i-1] === "{") {
+              S.splice(i-1, 2)
+              i--
+          }
+          else {
+              return 0
+          }
+        }
+        if (S[i] === "]") {
+          if (S[i-1] === "[") {
+              S.splice(i-1, 2)
+              i--
+          }
+          else {
+              return 0
+          }
+        }
+    }
+    return 1
+
+}
