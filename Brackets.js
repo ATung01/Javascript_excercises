@@ -27,39 +27,32 @@ expected worst-case space complexity is O(N) (not counting the storage required 
 
 function solution(S) {
     S = S.split("")
-    let openNestedPar = []
-    if (S.length === 0) {
+    let matched = {
+        ")": "(",
+        "}": "{",
+        "]": "["
+    }
+    let pushThis = ["(", "{", "["]
+    let stack = []
+
+    for(let i = 0; i<S.length; i++) {
+        if (pushThis.find((element) => element === S[i])) {
+            stack.push(S[i])
+        }
+        else {
+            if (stack.length === 0) {
+                return 0
+            }
+            else if (matched[S[i]] !== stack.pop()) {
+                return 0
+            }
+        }
+
+    }
+    if (stack.length === 0) {
         return 1
     }
-    for (let i = 1; i < S.length; i++) {
-        if (S[i] === ")") {
-          if (S[i-1] === "(") {
-              S.splice(i-1, 2)
-              i--
-          }
-          else {
-              return 0
-          }
-        }
-        if (S[i] === "}") {
-          if (S[i-1] === "{") {
-              S.splice(i-1, 2)
-              i--
-          }
-          else {
-              return 0
-          }
-        }
-        if (S[i] === "]") {
-          if (S[i-1] === "[") {
-              S.splice(i-1, 2)
-              i--
-          }
-          else {
-              return 0
-          }
-        }
+    else {
+        return 0
     }
-    return 1
-
 }
