@@ -27,3 +27,19 @@ Complexity:
 expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
 */
+
+function solution(A) {
+    let max = 0
+    let currentCount = 0
+
+    for (let i = 0; i<A.length; i++) {
+        currentCount = currentCount + A[i]
+        if (currentCount < 0) {
+            currentCount = 0
+        }
+        if (max <= currentCount) {
+            max = currentCount
+        }
+    }
+    return max
+}
