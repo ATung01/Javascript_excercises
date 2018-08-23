@@ -1,4 +1,4 @@
-let test = ["alex", "bob", "alex", "alex", "matt", "dave", "alex"]
+let test = ["alex", "bob", "alex", "alex", "matt", "dave", "alex", "bob"]
 
 function solve(test) {
   let count = {}
@@ -7,6 +7,7 @@ function solve(test) {
   for (let i = 0; i < test.length; i++) {
     count[test[i]] =  1 + (count[test[i]] || 0)
   }
+  // count = {"alex": 4, "bob": 2, "matt": 1, "dave": 1}
 
   for (let j = (test.length-1); j >= 0; j--) {
     if (count[test[j]] > 1) {
