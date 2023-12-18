@@ -33,6 +33,9 @@ expected worst-case space complexity is O(1).
 function solution(X, Y, D) {
     let distance = Y - X
     let answer = Math.ceil(distance/D)
+    // console.log(answer)
     return answer
     
 }
+
+solution(10, 85, 30)
